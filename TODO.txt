@@ -1,0 +1,11 @@
+TODOs:
+ - design user account (social networks integration)
+ - design database relations
+ - write models
+ - design website navigation model
+ - design and write urls
+ - write views classes:
+  - TODO: list classes after navigation design
+ - design and write html django templates for sites
+  - TODO: list classes after navigation design
+ - tests
