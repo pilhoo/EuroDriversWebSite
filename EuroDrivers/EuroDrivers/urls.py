@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'', include('social_auth.urls')),
     # Examples:
     # url(r'^$', 'EuroDrivers.views.home', name='home'),
     # url(r'^EuroDrivers/', include('EuroDrivers.foo.urls')),

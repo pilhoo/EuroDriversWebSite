@@ -85,8 +85,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'social_auth.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'EuroDrivers.urls'
@@ -109,8 +109,46 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    #'social_auth',
     'Website'
 )
+
+#AUTHENTICATION_BACKENDS = (
+    #'social_auth.backends.twitter.TwitterBackend',
+    #'social_auth.backends.facebook.FacebookBackend',
+    #'social_auth.backends.google.GoogleOAuthBackend',
+    #'social_auth.backends.google.GoogleOAuth2Backend',
+    #'social_auth.backends.google.GoogleBackend',
+    #'social_auth.backends.yahoo.YahooBackend',
+    #'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
+    #'social_auth.backends.OpenIDBackend',
+    #'django.contrib.auth.backends.ModelBackend',
+#)
+
+## TODO
+#TWITTER_CONSUMER_KEY         = ''
+#TWITTER_CONSUMER_SECRET      = ''
+#FACEBOOK_APP_ID              = ''
+#FACEBOOK_API_SECRET          = ''
+#GOOGLE_CONSUMER_KEY          = ''
+#GOOGLE_CONSUMER_SECRET       = ''
+#GOOGLE_OAUTH2_CLIENT_ID      = ''
+#GOOGLE_OAUTH2_CLIENT_SECRET  = ''
+#YAHOO_CONSUMER_KEY           = ''
+#YAHOO_CONSUMER_SECRET        = ''
+
+#LOGIN_URL          = '/login-form/'
+#LOGIN_REDIRECT_URL = '/logged-in/'
+#LOGIN_ERROR_URL    = '/login-error/'
+
+#SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
+#SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
+
+#SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+#SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True   # TODO verify
+#SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
+#SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email',]
+#SOCIAL_AUTH_SESSION_EXPIRATION = False
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
