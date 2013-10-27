@@ -1,0 +1,6 @@
+msgid "News"
+msgstr "News"
+
+msgid "Opinions"
+msgstr "Opinions"
+

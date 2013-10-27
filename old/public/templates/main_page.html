@@ -1,0 +1,70 @@
+{% load i18n %}
+{% load humanize %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 3.0 License
+
+Name       : Oceania
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120208
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Euro drivers</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="Shortcut icon" href="/images/icon.ico">
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">
+            <h1><a href="#">Euro Drivers</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
+                {% for tl in transl_langs  %}
+                <li class="{% if forloop.first %}first {% endif %}{% if tl.id|stringformat:"s" == page_lang|stringformat:"s" %}current_page_item {% endif %}{% if forloop.last %}last{% endif %}"><a href="setlang/{{ tl.id }}">{{ tl.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <br class="clearfix" />
+        </div>
+    </div>
+    <div id="page">
+        <div id="newsbox">
+            <h4>{% trans "News:" %}</h4>
+            {% for ne in news %}
+                <div class="news">
+                    <span class="newstitle">{{ ne.title }}</span>
+                    <span class="date">{{ ne.pub_date|naturalday }}</span><br/>
+                    <span class="newstxt">{{ ne.text }}</span>
+{#                    TODO comments#}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="opinionsbox">
+            <h4>{% trans "Opinions:" %}</h4>
+            {% for oe in opinions %}
+                <div class="opinion">
+                    <p class="stat_txt">{{ oe.text }}</p>
+                    <span class="author">~{{ oe.author }}</span>
+                    <span class="date">{{ oe.pub_date|naturalday }}</span>
+                </div>
+{#                TODO#}
+            {%  endfor %}
+            <a href="addcomment/">{% trans "add comment" %}</a><br/>
+            <a href="getcomments/">{% trans "get comments in pdf" %}</a>
+        </div>
+        <br class="clearfix" />
+    </div>
+</div>
+<div id="footer">
+    Copyright (c) 2012 EuroDrivers.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.
+</div>
+</body>
+</html>
